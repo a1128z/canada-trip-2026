@@ -1,0 +1,1020 @@
+<title>加西極光公路旅行</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Sans+TC:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap">
+
+<style>
+  :root{
+    --bg:#f5f2ea; --surface:#fffdf7; --surface-2:#eee8db;
+    --ink:#232c26; --muted:#6c7469; --faint:#98a094; --line:#e2dccc;
+    --pine:#2f5d4f; --pine-soft:#dfeae3;
+    --amber:#b56e22; --amber-soft:#f4e5d0;
+    --lake:#317f89; --lake-soft:#d8ecee;
+    --shadow:0 1px 2px rgba(35,44,38,.05), 0 8px 24px -14px rgba(35,44,38,.28);
+    --radius:16px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#111815; --surface:#1a2420; --surface-2:#212e28;
+      --ink:#edf2ea; --muted:#9ba89d; --faint:#6f7d72; --line:#2b3a32;
+      --pine:#84c3aa; --pine-soft:#1d2c25;
+      --amber:#e0a35c; --amber-soft:#2d2416;
+      --lake:#68c1ca; --lake-soft:#16292b;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 30px -16px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#111815; --surface:#1a2420; --surface-2:#212e28;
+    --ink:#edf2ea; --muted:#9ba89d; --faint:#6f7d72; --line:#2b3a32;
+    --pine:#84c3aa; --pine-soft:#1d2c25;
+    --amber:#e0a35c; --amber-soft:#2d2416;
+    --lake:#68c1ca; --lake-soft:#16292b;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 30px -16px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Karla","Noto Sans TC",system-ui,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:0 18px 72px}
+
+  /* ---------- Header ---------- */
+  .hero{
+    padding:44px 0 26px; text-align:center;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--amber); font-weight:700; margin:0 0 10px;
+  }
+  h1{
+    font-family:"Fraunces","Noto Sans TC",serif; font-weight:600;
+    font-size:clamp(2.1rem,7vw,3.2rem); line-height:1.04; margin:0;
+    letter-spacing:-.01em; text-wrap:balance; color:var(--ink);
+  }
+  .dates{
+    margin:14px 0 0; color:var(--muted); font-size:1rem;
+    font-variant-numeric:tabular-nums;
+  }
+  .route{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:6px 4px;
+    margin:20px auto 0; max-width:640px;
+    font-size:.82rem; color:var(--muted);
+  }
+  .route span{white-space:nowrap}
+  .route b{color:var(--pine); font-weight:700}
+  .route i{color:var(--faint); font-style:normal; margin:0 2px}
+
+  /* ---------- Day nav ---------- */
+  nav.jump{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb, var(--bg) 90%, transparent);
+    backdrop-filter:blur(10px);
+    margin:0 -18px; padding:10px 18px;
+    border-bottom:1px solid var(--line);
+    overflow-x:auto; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  nav.jump::-webkit-scrollbar{display:none}
+  .jump-inner{display:flex; gap:7px; width:max-content}
+  .chip{
+    flex:0 0 auto; text-decoration:none;
+    padding:6px 12px; border-radius:999px;
+    background:var(--surface); border:1px solid var(--line);
+    color:var(--muted); font-size:.8rem; font-weight:600;
+    font-variant-numeric:tabular-nums; white-space:nowrap;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .chip:hover,.chip:focus-visible{color:var(--pine); border-color:var(--pine)}
+  .chip .cn{color:var(--faint); font-weight:500; margin-left:4px}
+
+  /* ---------- Legend ---------- */
+  .legend{
+    display:flex; flex-wrap:wrap; gap:8px 16px; justify-content:center;
+    padding:22px 0 4px; color:var(--muted); font-size:.8rem;
+  }
+  .legend span{display:inline-flex; align-items:center; gap:6px}
+  .legend .ic{width:15px; height:15px}
+
+  /* ---------- Leg heading ---------- */
+  .leg{
+    display:flex; align-items:baseline; gap:10px;
+    margin:40px 0 6px; padding-bottom:8px;
+  }
+  .leg .n{
+    font-family:"Fraunces",serif; font-size:.9rem; font-weight:600;
+    color:var(--amber); font-variant-numeric:tabular-nums;
+  }
+  .leg h2{
+    margin:0; font-family:"Fraunces","Noto Sans TC",serif;
+    font-weight:600; font-size:1.15rem; letter-spacing:-.01em; color:var(--ink);
+  }
+  .leg .loc{font-size:.78rem; color:var(--faint); letter-spacing:.04em}
+
+  /* ---------- Day card ---------- */
+  .day{
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius); box-shadow:var(--shadow);
+    padding:18px 18px 6px; margin-top:14px;
+    scroll-margin-top:64px;
+    animation:rise .5s ease both;
+  }
+  @keyframes rise{from{opacity:0; transform:translateY(10px)}to{opacity:1; transform:none}}
+  @media (prefers-reduced-motion:reduce){.day{animation:none}}
+
+  .day-head{
+    display:flex; align-items:center; gap:12px; margin-bottom:12px;
+  }
+  .datebox{
+    flex:0 0 auto; text-align:center; line-height:1;
+    background:var(--pine-soft); color:var(--pine);
+    border-radius:12px; padding:8px 10px; min-width:52px;
+  }
+  .datebox .d{font-family:"Fraunces",serif; font-size:1.5rem; font-weight:600; font-variant-numeric:tabular-nums}
+  .datebox .m{font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; margin-top:3px; font-weight:700}
+  .day-meta{min-width:0}
+  .day-meta .wd{font-size:.78rem; color:var(--faint); font-weight:600; letter-spacing:.03em}
+  .day-meta .ttl{font-weight:700; font-size:1.02rem; color:var(--ink)}
+  .daytag{
+    margin-left:auto; flex:0 0 auto; align-self:flex-start;
+    font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--lake); background:var(--lake-soft);
+    padding:4px 9px; border-radius:999px;
+  }
+
+  /* ---------- Stops ---------- */
+  ul.stops{list-style:none; margin:0; padding:0}
+  ul.stops li{
+    display:flex; gap:12px; padding:11px 0;
+    border-top:1px dashed var(--line);
+  }
+  ul.stops li:first-child{border-top:none}
+  .badge{
+    flex:0 0 auto; width:34px; height:34px; border-radius:10px;
+    display:grid; place-items:center; margin-top:1px;
+  }
+  .badge .ic{width:18px; height:18px}
+  .b-sight{background:var(--pine-soft); color:var(--pine)}
+  .b-food{background:var(--amber-soft); color:var(--amber)}
+  .b-move{background:var(--lake-soft); color:var(--lake)}
+  .stop-body{min-width:0; flex:1}
+  .stop-name{font-weight:600; color:var(--ink)}
+  .stop-sub{color:var(--muted); font-size:.88rem}
+  .stop-note{
+    display:inline-block; margin-top:4px; font-size:.78rem;
+    color:var(--amber); background:var(--amber-soft);
+    padding:2px 8px; border-radius:6px; line-height:1.45;
+  }
+  .stop-time{
+    font-variant-numeric:tabular-nums; font-weight:700; color:var(--lake);
+    font-size:.82rem; margin-right:6px;
+  }
+  a.link{
+    display:inline-flex; align-items:center; gap:5px; margin-top:5px;
+    font-size:.8rem; font-weight:600; color:var(--pine); text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb,var(--pine) 35%, transparent);
+    padding-bottom:1px;
+  }
+  a.link:hover{border-bottom-color:var(--pine)}
+  a.link .ic{width:13px; height:13px}
+
+  /* recommendations box (from 米雪安啾 口袋名單) */
+  .recs{margin:2px 0 10px; padding:12px 14px; background:var(--surface-2); border-radius:12px}
+  .recs .h5{margin:0 0 10px; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:700; display:flex; align-items:center; gap:6px}
+  .recs .h5 .ic{width:14px; height:14px}
+  .recs ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px}
+  .recs li{display:flex; gap:7px; align-items:baseline; flex-wrap:wrap}
+  .recs .k{flex:0 0 auto; font-size:.66rem; font-weight:700; color:var(--amber); background:var(--amber-soft); padding:2px 7px; border-radius:6px; letter-spacing:.02em}
+  .recs .k.s{color:var(--pine); background:var(--pine-soft)}
+  .recs .k.n{color:var(--lake); background:var(--lake-soft)}
+  .recs .nm{color:var(--ink); font-weight:600; font-size:.9rem}
+  .recs .ds{color:var(--muted); font-size:.82rem; width:100%; padding-left:1px; line-height:1.5}
+  .maplink{color:var(--pine); font-weight:700; text-decoration:none; font-size:.78rem; white-space:nowrap;
+    border-bottom:1px solid color-mix(in srgb,var(--pine) 35%,transparent)}
+  .maplink:hover{border-bottom-color:var(--pine)}
+  .credit{font-size:.72rem; color:var(--faint); text-align:center; margin:6px 0 0}
+
+  /* stay footer */
+  .stay{
+    display:flex; align-items:center; gap:8px;
+    margin:6px -18px 0; padding:12px 18px;
+    border-top:1px solid var(--line);
+    background:var(--surface-2); border-radius:0 0 var(--radius) var(--radius);
+    font-size:.86rem; color:var(--ink);
+  }
+  .stay .ic{width:16px; height:16px; color:var(--muted)}
+  .stay b{font-weight:700}
+
+  /* suggestion chips inside banff block */
+  .sugg{display:flex; flex-wrap:wrap; gap:7px; margin:2px 0 12px}
+  .sugg a{
+    text-decoration:none; font-size:.82rem; font-weight:600;
+    color:var(--pine); background:var(--pine-soft);
+    padding:5px 11px; border-radius:999px;
+  }
+  .hint{
+    font-size:.85rem; color:var(--muted); margin:0 0 12px;
+    padding:10px 12px; background:var(--surface-2); border-radius:10px;
+    border-left:3px solid var(--amber);
+  }
+
+  /* ---------- Gifts ---------- */
+  .gifts{display:grid; grid-template-columns:1fr; gap:12px; margin-top:14px}
+  @media(min-width:560px){.gifts{grid-template-columns:1fr 1fr}}
+  .gift{
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius); box-shadow:var(--shadow); padding:15px 16px;
+  }
+  .gift.top{grid-column:1/-1; border-color:var(--amber);
+    background:linear-gradient(180deg, var(--amber-soft), var(--surface) 70%)}
+  .gift-h{display:flex; align-items:center; gap:10px; margin-bottom:7px}
+  .gift-h .badge{width:34px; height:34px}
+  .gift-h .nm{font-weight:700; font-size:1.02rem; color:var(--ink); line-height:1.3}
+  .gift-h .en{display:block; font-size:.78rem; color:var(--faint); font-weight:600; letter-spacing:.02em}
+  .rank{
+    margin-left:auto; flex:0 0 auto; font-family:"Fraunces",serif; font-weight:600;
+    font-size:.72rem; letter-spacing:.06em; color:#fff; background:var(--amber);
+    padding:3px 9px; border-radius:999px;
+  }
+  .gift p{margin:0; color:var(--muted); font-size:.9rem}
+  .gift .stop-note{margin-top:8px}
+  .who{
+    margin-top:14px; background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
+  }
+  .who-row{display:flex; align-items:center; gap:12px; padding:13px 16px; border-top:1px solid var(--line)}
+  .who-row:first-child{border-top:none}
+  .who-tag{
+    flex:0 0 auto; width:74px; text-align:center; font-weight:700; font-size:.82rem;
+    color:var(--pine); background:var(--pine-soft); padding:5px 0; border-radius:8px;
+  }
+  .who-row b{color:var(--ink); font-weight:600}
+  .who-row .d{color:var(--muted); font-size:.9rem}
+
+  /* buying plan */
+  .plan{display:grid; grid-template-columns:1fr; gap:10px; margin-top:14px}
+  @media(min-width:560px){.plan{grid-template-columns:1fr 1fr}}
+  .plan-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:15px 16px;
+  }
+  .plan-card .tag{
+    display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.06em;
+    padding:3px 9px; border-radius:999px; margin-bottom:8px;
+  }
+  .plan-card.main .tag{color:var(--pine); background:var(--pine-soft)}
+  .plan-card.late .tag{color:var(--lake); background:var(--lake-soft)}
+  .plan-card h4{margin:0 0 4px; font-size:1rem; color:var(--ink)}
+  .plan-card p{margin:0; color:var(--muted); font-size:.88rem}
+  .spots{width:100%; border-collapse:collapse; margin-top:14px; font-size:.88rem}
+  .spots th,.spots td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top}
+  .spots thead th{font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); font-weight:700}
+  .spots tbody b{color:var(--ink)}
+  .spots td:first-child{white-space:nowrap; color:var(--amber); font-weight:700; font-variant-numeric:tabular-nums}
+  .spots-wrap{overflow-x:auto}
+
+  footer{
+    text-align:center; margin-top:44px; padding-top:22px;
+    border-top:1px solid var(--line); color:var(--faint); font-size:.8rem;
+  }
+  .ic{display:inline-block; vertical-align:middle; fill:none;
+    stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+</style>
+
+<!-- icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21s-6-5.7-6-10a6 6 0 1 1 12 0c0 4.3-6 10-6 10Z"/><circle cx="12" cy="11" r="2.3"/></symbol>
+  <symbol id="ic-mtn" viewBox="0 0 24 24"><path d="M3 20 10 7l4 7 2.3-3.6L21 20Z"/><path d="M8 12.5 10 7l2 3.5"/></symbol>
+  <symbol id="ic-flag" viewBox="0 0 24 24"><path d="M6 21V4"/><path d="M6 4.5h11l-2.4 3.5L17 11.5H6"/></symbol>
+  <symbol id="ic-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="ic-water" viewBox="0 0 24 24"><path d="M8 3v10M12 3v11M16 4v9"/><path d="M5 18c2.3 2 4.7 2 7 0s4.7-2 7 0"/></symbol>
+  <symbol id="ic-fork" viewBox="0 0 24 24"><path d="M8 3v6M11 3v6M9.5 9v12"/><path d="M16 3c-1.6 1-2.4 3-2.4 6 0 2 1 3 2.4 3v9"/></symbol>
+  <symbol id="ic-wine" viewBox="0 0 24 24"><path d="M7 3h10l-1 6.5a4 4 0 0 1-8 0Z"/><path d="M12 15.5V21M8.5 21h7"/></symbol>
+  <symbol id="ic-bag" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7Z"/><path d="M9 8a3 3 0 0 1 6 0"/></symbol>
+  <symbol id="ic-car" viewBox="0 0 24 24"><path d="M5 11l1.6-4.2A2 2 0 0 1 8.5 5.5h7a2 2 0 0 1 1.9 1.3L19 11"/><path d="M4 11h16v5H4Z"/><circle cx="7.5" cy="16.5" r="1.6"/><circle cx="16.5" cy="16.5" r="1.6"/></symbol>
+  <symbol id="ic-plane" viewBox="0 0 24 24"><path d="M22 3 11 14"/><path d="M22 3 15 21l-4-7-7-4Z"/></symbol>
+  <symbol id="ic-bed" viewBox="0 0 24 24"><path d="M3 19v-9M3 14h13a4 4 0 0 1 4 4v1M21 19v-3"/><path d="M6.5 14v-1.5h4V14"/></symbol>
+  <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="ic-gift" viewBox="0 0 24 24"><path d="M4 11h16v9H4z"/><path d="M3 7h18v4H3z"/><path d="M12 7v13"/><path d="M12 7C9.5 7 8 6 8 4.5 8 3 10 3 12 7c2-4 4-4 4-2.5C16 6 14.5 7 12 7Z"/></symbol>
+  <symbol id="ic-leaf" viewBox="0 0 24 24"><path d="M11 20C6 19 3.5 13.5 5 7c6.5 0 11 3.5 11 11"/><path d="M11 20C11 13.5 13.5 9 18.5 6"/></symbol>
+</svg>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">加拿大西部 · 自駕 & 極光</p>
+    <h1>加西極光公路旅行</h1>
+    <p class="dates">20 Sep – 8 Oct, 2026 · 共 19 天</p>
+    <div class="route">
+      <span><b>溫哥華</b></span><i>→</i>
+      <span><b>Whistler</b></span><i>→</i>
+      <span><b>Kamloops</b> 甘露</span><i>→</i>
+      <span><b>Kelowna</b> 酒鄉</span><i>→</i>
+      <span><b>Calgary</b> 卡加利</span><i>→</i>
+      <span><b>Banff</b> 班夫</span><i>→</i>
+      <span><b>Yellowknife</b> 黃刀鎮</span><i>→</i>
+      <span><b>溫哥華</b></span>
+    </div>
+  </header>
+
+  <nav class="jump" aria-label="快速跳到某一天">
+    <div class="jump-inner">
+      <a class="chip" href="#d0920">20 Sep<span class="cn">溫哥華</span></a>
+      <a class="chip" href="#d0921">21 Sep<span class="cn">溫哥華</span></a>
+      <a class="chip" href="#d0922">22 Sep<span class="cn">溫哥華</span></a>
+      <a class="chip" href="#d0923">23 Sep<span class="cn">Whistler</span></a>
+      <a class="chip" href="#d0924">24 Sep<span class="cn">甘露</span></a>
+      <a class="chip" href="#d0925">25 Sep<span class="cn">Kelowna</span></a>
+      <a class="chip" href="#d0926">26 Sep<span class="cn">酒莊</span></a>
+      <a class="chip" href="#d0927">27 Sep<span class="cn">卡加利</span></a>
+      <a class="chip" href="#d0928">28 Sep<span class="cn">卡加利市區</span></a>
+      <a class="chip" href="#d0929">29 Sep<span class="cn">→ 班夫</span></a>
+      <a class="chip" href="#d0930">30 Sep<span class="cn">班夫鎮</span></a>
+      <a class="chip" href="#d1001">1 Oct<span class="cn">冰原大道</span></a>
+      <a class="chip" href="#d1002">2 Oct<span class="cn">Jasper 湖</span></a>
+      <a class="chip" href="#d1003">3 Oct<span class="cn">路易斯湖</span></a>
+      <a class="chip" href="#d1004">4 Oct<span class="cn">纜車→卡加利</span></a>
+      <a class="chip" href="#d1005">5 Oct<span class="cn">恐龍谷</span></a>
+      <a class="chip" href="#d1006">6 Oct<span class="cn">黃刀鎮</span></a>
+      <a class="chip" href="#d1007">7 Oct<span class="cn">黃刀鎮</span></a>
+      <a class="chip" href="#d1008">8 Oct<span class="cn">回溫哥華</span></a>
+      <a class="chip" href="#gifts" style="color:var(--amber);border-color:color-mix(in srgb,var(--amber) 55%,transparent)">🎁 伴手禮</a>
+    </div>
+  </nav>
+
+  <div class="legend">
+    <span><svg class="ic b-none"><use href="#ic-mtn"/></svg> 景點 / 健行</span>
+    <span><svg class="ic"><use href="#ic-fork"/></svg> 美食 / 酒莊</span>
+    <span><svg class="ic"><use href="#ic-car"/></svg> 交通 / 移動</span>
+    <span><svg class="ic"><use href="#ic-bed"/></svg> 住宿</span>
+  </div>
+
+  <!-- ============ LEG 1 ============ -->
+  <div class="leg"><span class="n">01</span><h2>溫哥華市區</h2><span class="loc">Vancouver</span></div>
+
+  <section class="day" id="d0920">
+    <div class="day-head">
+      <div class="datebox"><div class="d">20</div><div class="m">Sep</div></div>
+      <div class="day-meta"><div class="wd">週日 · Day 1</div><div class="ttl">抵達溫哥華</div></div>
+      <span class="daytag">抵達日</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">抵達 · 安頓</div>
+        <div class="stop-sub">取車、入住、市區走走適應時差</div></div></li>
+    </ul>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>溫哥華</b></div>
+  </section>
+
+  <section class="day" id="d0921">
+    <div class="day-head">
+      <div class="datebox"><div class="d">21</div><div class="m">Sep</div></div>
+      <div class="day-meta"><div class="wd">週一 · Day 2</div><div class="ttl">吊橋 · 公園 · 老城區</div></div>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">史丹利公園 Stanley Park</div>
+        <div class="stop-sub">海堤騎腳踏車、圖騰柱，可騎到 <b>English Bay</b> 海邊放鬆、順便調時差</div>
+        <span class="stop-note">公園超大，建議附近租腳踏車；小心郊狼出沒！</span></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-flag"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Lynn Canyon Suspension Bridge</div>
+        <div class="stop-sub">林恩峽谷吊橋 · 免費（Capilano 的平替），森林步道與瀑布</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">南瓜園 Pumpkin Patch</div>
+        <div class="stop-sub">9–10 月正是季節，很好拍</div>
+        <a class="link" href="https://rosaroundtheworld.com/pumpkin-patch/" target="_blank" rel="noopener">南瓜園介紹 <svg class="ic"><use href="#ic-arrow"/></svg></a></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">煤氣鎮 Gastown</div>
+        <div class="stop-sub">蒸汽鐘、紅磚老街 · 甜甜圈 Lee's、加拿大品牌 Herschel 旗艦店</div>
+        <span class="stop-note">紀念品可留到卡加利/班夫買，那邊是 AB 省稅只 5%</span></div></li>
+    </ul>
+    <div class="recs">
+      <div class="h5"><svg class="ic"><use href="#ic-fork"/></svg> 在地推薦 · 溫哥華餐廳</div>
+      <ul>
+        <li><span class="k">韓餐</span><span class="nm">mumu kitchen</span> <a class="maplink" href="https://maps.app.goo.gl/H7q6VVif6ujPcfUV7" target="_blank" rel="noopener">地圖</a></li>
+        <li><span class="k">居酒屋</span><span class="nm">Kingyo Izakaya</span> <a class="maplink" href="https://maps.app.goo.gl/ArxJiBFn4JJqzLCi7" target="_blank" rel="noopener">地圖</a><span class="ds">日韓美式綜合創意料理，很好吃</span></li>
+        <li><span class="k">義大利麵</span><span class="nm">The Old Spaghetti Factory</span> <a class="maplink" href="https://maps.app.goo.gl/VKcJpwTJ1QMxCm3t5" target="_blank" rel="noopener">地圖</a></li>
+        <li><span class="k">餐酒館</span><span class="nm">LOCAL Public Eatery（Gastown）</span> <a class="maplink" href="https://maps.app.goo.gl/gPHehqMPUkWG9Ary9" target="_blank" rel="noopener">地圖</a></li>
+        <li><span class="k">墨西哥</span><span class="nm">La Playita Seafood</span> <a class="maplink" href="https://maps.app.goo.gl/HMaxLC5zP24awL7i8" target="_blank" rel="noopener">地圖</a><span class="ds">很道地，但附近晚上請結伴</span></li>
+      </ul>
+    </div>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>溫哥華</b></div>
+  </section>
+
+  <section class="day" id="d0922">
+    <div class="day-head">
+      <div class="datebox"><div class="d">22</div><div class="m">Sep</div></div>
+      <div class="day-meta"><div class="wd">週二 · Day 3</div><div class="ttl">吊橋公園 · 海灣 · 島</div></div>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-flag"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Capilano Suspension Bridge Park</div>
+        <div class="stop-sub">卡皮拉諾吊橋公園 · 樹頂步道、懸崖步道</div>
+        <span class="stop-note">建議一早前往避開人潮</span></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Deep Cove 深灣</div>
+        <div class="stop-sub">海灣玩水上活動（SUP、獨木舟），小鎮逛逛也不錯，可走 Quarry Rock 步道</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">The Shipyards / Burrard Dry Dock Pier</div>
+        <div class="stop-sub">北溫碼頭走走參觀（冬天有溜冰場，10 月不確定開放）</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Granville Island</div>
+        <div class="stop-sub">格蘭維爾島市集 · <b>18:00 收攤</b>，把握白天逛市集</div>
+        <a class="link" href="https://rosaroundtheworld.com/granville-island/" target="_blank" rel="noopener">Granville Island 介紹 <svg class="ic"><use href="#ic-arrow"/></svg></a></div></li>
+      <li><span class="badge b-food"><svg class="ic"><use href="#ic-fork"/></svg></span>
+        <div class="stop-body"><div class="stop-name">The Sandbar Seafood</div>
+        <div class="stop-sub">晚餐 · 島上海鮮餐廳（市集收攤後仍營業）</div></div></li>
+    </ul>
+    <div class="recs">
+      <div class="h5"><svg class="ic"><use href="#ic-fork"/></svg> 在地推薦 · 北溫哥華</div>
+      <ul>
+        <li><span class="k">必吃</span><span class="nm">South Castle 韓國血腸湯飯</span> <a class="maplink" href="https://maps.app.goo.gl/mtwbHfaH4qif2naC6" target="_blank" rel="noopener">地圖</a></li>
+        <li><span class="k">冰淇淋</span><span class="nm">Deep Cove 冰淇淋</span> <a class="maplink" href="https://maps.app.goo.gl/G7pixtEHWG6J9CTD8" target="_blank" rel="noopener">地圖</a></li>
+        <li><span class="k">冰淇淋</span><span class="nm">北溫冰淇淋</span> <a class="maplink" href="https://maps.app.goo.gl/J6WzN5vUrBLCrcCK7" target="_blank" rel="noopener">地圖</a></li>
+      </ul>
+    </div>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>溫哥華</b></div>
+  </section>
+
+  <section class="day">
+    <div class="day-head">
+      <div class="datebox" style="background:var(--amber-soft);color:var(--amber)"><div class="d">＋</div><div class="m">Extra</div></div>
+      <div class="day-meta"><div class="wd">溫哥華有空檔時</div><div class="ttl">周邊備選景點</div></div>
+      <span class="daytag" style="color:var(--amber);background:var(--amber-soft)">備選</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-leaf"/></svg></span>
+        <div class="stop-body"><div class="stop-name">VanDusen Botanical Garden</div>
+        <div class="stop-sub">植物園 · 三個備選裡最推這個</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Queen Elizabeth Park</div>
+        <div class="stop-sub">伊莉莎白女王公園 · 市區制高點花園</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Burnaby Village Museum</div>
+        <div class="stop-sub">本拿比古村博物館</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Fort Langley</div>
+        <div class="stop-sub">歷史古鎮（偏溫哥華東邊，順路才去）</div>
+        <a class="link" href="https://rosaroundtheworld.com/fort-langley/" target="_blank" rel="noopener">Fort Langley 介紹 <svg class="ic"><use href="#ic-arrow"/></svg></a></div></li>
+      <li><span class="badge b-food"><svg class="ic"><use href="#ic-bag"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Metrotown · Vessi 防水鞋</div>
+        <div class="stop-sub">創辦人是台灣人，主打「真防水」休閒鞋/布鞋/運動鞋</div></div></li>
+    </ul>
+    <p class="credit">景點/餐廳口袋名單整理自「米雪安啾」行程</p>
+  </section>
+
+  <!-- ============ LEG 2 ============ -->
+  <div class="leg"><span class="n">02</span><h2>海天公路 · 進山</h2><span class="loc">Sea-to-Sky → Whistler</span></div>
+
+  <section class="day" id="d0923">
+    <div class="day-head">
+      <div class="datebox"><div class="d">23</div><div class="m">Sep</div></div>
+      <div class="day-meta"><div class="wd">週三 · Day 4</div><div class="ttl">瀑布 · 纜車 · 海天公路</div></div>
+      <span class="daytag">移動日</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-water"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Shannon Falls Provincial Park</div>
+        <div class="stop-sub">香濃瀑布 · BC 第三高瀑布，停車即達</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Sea to Sky Gondola</div>
+        <div class="stop-sub">海天纜車 · 山頂吊橋與觀景步道，約 <b>4 小時</b></div>
+        <a class="link" href="https://godiscovertoday.com/sea-to-sky-gondola/" target="_blank" rel="noopener">纜車攻略 <svg class="ic"><use href="#ic-arrow"/></svg></a></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Squamish 鎮 · 火車博物館</div>
+        <div class="stop-sub">Railway Museum of British Columbia（Sea to Sky 沿途小鎮）</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-flag"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Eagle Coaster 山林滑道</div>
+        <div class="stop-sub">可買兩趟：一趟看風景、一趟衝刺</div></div></li>
+      <li><span class="badge b-move"><svg class="ic"><use href="#ic-car"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Sea-to-Sky Highway (Hwy 99)</div>
+        <div class="stop-sub">沿海天公路一路開往 Whistler，沿途觀景點多；下山後可逛 Whistler 小鎮</div></div></li>
+    </ul>
+    <div class="recs">
+      <div class="h5"><svg class="ic"><use href="#ic-fork"/></svg> 在地推薦 · Squamish 沿途</div>
+      <ul>
+        <li><span class="k">早餐</span><span class="nm">Fergie's Café</span> <a class="maplink" href="https://maps.app.goo.gl/PQBJwpwHFExrv7n66" target="_blank" rel="noopener">地圖</a><span class="ds">裝潢有格調，評價不錯</span></li>
+        <li><span class="k">午餐</span><span class="nm">OUTBOUND STATION（O|S）</span> <a class="maplink" href="https://maps.app.goo.gl/S5YrkDbKbW1GBsZGA" target="_blank" rel="noopener">地圖</a><span class="ds">好吃的漢堡與松露薯條，要排很久</span></li>
+        <li><span class="k">冰淇淋</span><span class="nm">Alice and Brohm Ice Cream</span> <a class="maplink" href="https://maps.app.goo.gl/4jyQz6U61rXUoMURA" target="_blank" rel="noopener">地圖</a></li>
+      </ul>
+    </div>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>Whistler</b></div>
+  </section>
+
+  <section class="day" id="d0924">
+    <div class="day-head">
+      <div class="datebox"><div class="d">24</div><div class="m">Sep</div></div>
+      <div class="day-meta"><div class="wd">週四 · Day 5</div><div class="ttl">Joffre 湖健行 · Duffey 湖</div></div>
+      <span class="daytag">移動日</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-flag"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Joffre Lakes Provincial Park</div>
+        <div class="stop-sub">三座冰川湖健行 · 車程約 2 小時，來回約 <b>6 小時</b>（含休息與山上簡易用餐），Tiffany 藍湖水</div>
+        <span class="stop-note">需線上預約免費 Day-use Pass，出發前務必確認</span>
+        <a class="link" href="https://rosaroundtheworld.com/joffre-lakes/" target="_blank" rel="noopener">Joffre Lakes 攻略 <svg class="ic"><use href="#ic-arrow"/></svg></a></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-eye"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Duffey Lake</div>
+        <div class="stop-sub">達菲湖 · 公路旁觀景湖，順路停留拍照</div></div></li>
+      <li><span class="badge b-move"><svg class="ic"><use href="#ic-car"/></svg></span>
+        <div class="stop-body"><div class="stop-name">開往甘露 Kamloops</div>
+        <div class="stop-sub">健行後傍晚移動至內陸過夜</div></div></li>
+    </ul>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>甘露 Kamloops</b></div>
+  </section>
+
+  <!-- ============ LEG 3 ============ -->
+  <div class="leg"><span class="n">03</span><h2>鮭魚 · 酒鄉</h2><span class="loc">Kamloops → Kelowna · Okanagan</span></div>
+
+  <section class="day" id="d0925">
+    <div class="day-head">
+      <div class="datebox"><div class="d">25</div><div class="m">Sep</div></div>
+      <div class="day-meta"><div class="wd">週五 · Day 6</div><div class="ttl">洄游鮭魚 · 觀景台</div></div>
+      <span class="daytag">移動日</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-water"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Sockeye Salmon Run 鮭魚洄游</div>
+        <div class="stop-sub">Spawning Salmon Viewing Center · Kenna Cartwright Park 一帶，紅鮭產卵季</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-eye"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Sicamous Lookout</div>
+        <div class="stop-sub">無遮擋視野，俯瞰 Shuswap Lake、Mara Lake 與小鎮，風景絕對值得</div>
+        <span class="stop-note">上山 8km 是伐木土路、開 30–40 分；路窄、新手司機慎重，建議 SUV、陰雨天別去；觀景台無圍欄靠邊小心</span></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Kangaroo Creek Farm 袋鼠農場</div>
+        <div class="stop-sub">Kelowna 附近，可近距離看袋鼠</div>
+        <a class="link" href="https://maps.app.goo.gl/9mBHiNM91vcGLCET6" target="_blank" rel="noopener">地圖 <svg class="ic"><use href="#ic-arrow"/></svg></a></div></li>
+      <li><span class="badge b-move"><svg class="ic"><use href="#ic-car"/></svg></span>
+        <div class="stop-body"><div class="stop-name">開往 Kelowna</div>
+        <div class="stop-sub">進入 Okanagan 酒鄉，準備隔天酒莊行</div></div></li>
+    </ul>
+    <div class="recs">
+      <div class="h5"><svg class="ic"><use href="#ic-mtn"/></svg> Okanagan 周邊備選（有多的時間可加）</div>
+      <ul>
+        <li><span class="k s">騎行</span><span class="nm">Penticton · Kettle Valley Rail Trail</span> <a class="maplink" href="http://xhslink.com/o/7oau0tCNRnz" target="_blank" rel="noopener">路線</a><span class="ds">起點 downtown 沿湖騎，經網紅桃子店、葡萄園酒莊，終點是超好拍的隧道，全程約 4 小時；downtown 有租車店，體力不好可租電動車</span></li>
+        <li><span class="k s">採果</span><span class="nm">採果園</span><span class="ds">下午可去，櫻桃／蔓越莓／藍莓看季節</span></li>
+      </ul>
+    </div>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>Kelowna</b></div>
+  </section>
+
+  <section class="day" id="d0926">
+    <div class="day-head">
+      <div class="datebox"><div class="d">26</div><div class="m">Sep</div></div>
+      <div class="day-meta"><div class="wd">週六 · Day 7</div><div class="ttl">Okanagan 酒莊行（三間）</div></div>
+      <span class="daytag">酒鄉日</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-food"><svg class="ic"><use href="#ic-wine"/></svg></span>
+        <div class="stop-body"><span class="stop-time">上午</span><span class="stop-name">Mission Hill Winery</span>
+        <div class="stop-sub">地標級酒莊 · 圓形拱廊與葡萄園景觀</div></div></li>
+      <li><span class="badge b-food"><svg class="ic"><use href="#ic-wine"/></svg></span>
+        <div class="stop-body"><span class="stop-time">下午</span><span class="stop-name">Quails' Gate Winery</span>
+        <div class="stop-sub">湖景餐廳 + 品酒，適合午餐</div></div></li>
+      <li><span class="badge b-food"><svg class="ic"><use href="#ic-wine"/></svg></span>
+        <div class="stop-body"><span class="stop-time">最後</span><span class="stop-name">Frind Estate Winery</span>
+        <div class="stop-sub">湖邊酒莊 · 收尾看夕陽</div>
+        <span class="stop-note">品酒需安排代駕或指定不飲酒駕駛</span></div></li>
+    </ul>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>Kelowna</b></div>
+  </section>
+
+  <!-- ============ LEG 4 ============ -->
+  <div class="leg"><span class="n">04</span><h2>卡加利</h2><span class="loc">Calgary</span></div>
+
+  <section class="day" id="d0927">
+    <div class="day-head">
+      <div class="datebox"><div class="d">27</div><div class="m">Sep</div></div>
+      <div class="day-meta"><div class="wd">週日 · Day 8</div><div class="ttl">跨省到卡加利</div></div>
+      <span class="daytag">移動日</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-move"><svg class="ic"><use href="#ic-car"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Kelowna → Calgary</div>
+        <div class="stop-sub">車程約 <b>6 小時</b>，翻越洛磯山脈，上午出發</div></div></li>
+      <li><span class="badge b-move"><svg class="ic"><use href="#ic-car"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Revelstoke 休息用餐</div>
+        <div class="stop-sub">途中停靠點；沿途風景後幾天會再經過，這天不用急著逐個停</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><span class="stop-time">下午</span><span class="stop-name">Peace Bridge</span>
+        <div class="stop-sub">和平橋 · Bow 河上的紅色玻璃步行橋</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Wonderland Sculpture</div>
+        <div class="stop-sub">巨型鏤空頭像雕塑（可入內拍照）</div></div></li>
+    </ul>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>卡加利 Calgary</b></div>
+  </section>
+
+  <section class="day" id="d0928">
+    <div class="day-head">
+      <div class="datebox"><div class="d">28</div><div class="m">Sep</div></div>
+      <div class="day-meta"><div class="wd">週一 · Day 9</div><div class="ttl">卡加利市區一日遊</div></div>
+      <span class="daytag">城市日</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-food"><svg class="ic"><use href="#ic-fork"/></svg></span>
+        <div class="stop-body"><div class="stop-name">OEB Breakfast Co 早餐</div>
+        <div class="stop-sub">卡加利人氣早餐店，出門先吃飽再開始市區行程</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Wonderland Sculpture 仙境</div>
+        <div class="stop-sub">卡加利最具代表的裝置藝術，可從各角度穿過的人頭雕像，抓 5–10 分鐘拍照，晚上也漂亮</div>
+        <span class="stop-note">110 6 Ave SE（The Bow 大樓前）· 全天免費</span>
+        <span class="stop-note">9/27 已排，若已拍可略過</span></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Calgary Central Library 中央圖書館</div>
+        <div class="stop-sub">全球十大最美圖書館之一 · 蜂巢雪花外觀、波浪木質天花板，像美術館，超推薦</div>
+        <span class="stop-note">800 3 St SE · C-Train 到 City Hall 站 · 一–四 09:00–20:00、五 09:00–18:00、六 09:00–17:00、日 12:00–17:00</span>
+        <a class="link" href="https://www.calgarylibrary.ca/read-learn-and-explore/central-library" target="_blank" rel="noopener">官網可預約免費導覽 <svg class="ic"><use href="#ic-arrow"/></svg></a></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-eye"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Calgary Tower 卡加利塔</div>
+        <div class="stop-sub">191m 地標 · 360° 觀景台與落地窗，晴天可眺望洛磯山脈；旋轉餐廳 Sky 360 每小時轉一圈</div>
+        <span class="stop-note">101 9 Ave SW · 10:00–21:00（夏季延長）· 門票約 $23（提前購較優惠）· 用餐需提早預訂</span></div></li>
+      <li><span class="badge b-food"><svg class="ic"><use href="#ic-fork"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Calgary Chinatown 唐人街（午餐）</div>
+        <div class="stop-sub">亞洲超市、港式茶餐廳、越南河粉、日式居酒屋、台式珍奶都有，比溫哥華唐人街好逛</div>
+        <span class="stop-note">Centre St N & 3 Ave SE · C-Train 到 Centre Street 站</span></div></li>
+      <li><span class="badge b-food"><svg class="ic"><use href="#ic-bag"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Stephen Avenue Walk · The CORE 購物</div>
+        <div class="stop-sub">購物與餐廳最集中的行人徒步街，連接 The CORE 購物中心 · 買 <b>Lululemon、Roots</b> 等加拿大品牌；四樓 Devonian 花園免費參觀</div>
+        <span class="stop-note">340 8 Ave SW · 卡加利稅全加拿大最低，把握逛街 · 白天購物、晚上用餐喝酒</span></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Prince's Island Park 王子島公園</div>
+        <div class="stop-sub">Bow River 河中小島、當地人後花園 · 步道與野餐區，經和平橋連接，適合散步、騎車、拍照</div>
+        <span class="stop-note">698 Eau Claire Ave SW · 05:00–23:00 免費 · C-Train 201/202</span></div></li>
+    </ul>
+    <div class="recs">
+      <div class="h5"><svg class="ic"><use href="#ic-fork"/></svg> 唐人街午餐推薦</div>
+      <ul>
+        <li><span class="k">粵菜港點</span><span class="nm">銀龍酒家 Silver Dragon</span><span class="ds">老字號</span></li>
+        <li><span class="k">越南河粉</span><span class="nm">Pho Hoai</span><span class="ds">CP 值很高</span></li>
+        <li><span class="k">小籠包</span><span class="nm">鄭家莊菜館 Great Taste</span></li>
+      </ul>
+    </div>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>卡加利 Calgary</b></div>
+  </section>
+
+  <section class="day" id="d0929">
+    <div class="day-head">
+      <div class="datebox"><div class="d">29</div><div class="m">Sep</div></div>
+      <div class="day-meta"><div class="wd">週二 · Day 10</div><div class="ttl">卡加利上午 · 下午進班夫</div></div>
+      <span class="daytag">移動日</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-flag"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Fish Creek 魚溪步道騎馬</div>
+        <div class="stop-sub">穿越 Fish Creek trails 的騎馬之旅</div>
+        <a class="link" href="https://www.getyourguide.com/calgary-l1783/calgary-horseback-riding-through-fish-creek-trails-t1377578/" target="_blank" rel="noopener">騎馬行程 <svg class="ic"><use href="#ic-arrow"/></svg></a></div></li>
+      <li><span class="badge b-move"><svg class="ic"><use href="#ic-car"/></svg></span>
+        <div class="stop-body"><span class="stop-time">16:00</span><span class="stop-name">班夫遊客中心 · 全體集合</span>
+        <div class="stop-sub">Banff Visitor Centre · 買 Parks Canada Discovery / Day Pass；接著到 IGA Banff 超市買菜</div>
+        <span class="stop-note">進 Alberta 省時鐘 +1 小時（BC 16:00 = AB 17:00）</span></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-eye"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Lake Minnewanka 明尼萬卡湖</div>
+        <div class="stop-sub">傍晚湖景，班夫近郊最大湖</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-water"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Upper Hot Springs 班夫上溫泉（自由）</div>
+        <div class="stop-sub">泡溫泉看山景，晚上放鬆的選項</div>
+        <a class="link" href="https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs" target="_blank" rel="noopener">官網 <svg class="ic"><use href="#ic-arrow"/></svg></a></div></li>
+    </ul>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>Harvie Heights</b>（班夫旁）· 可洗衣、自煮</div>
+  </section>
+
+  <!-- ============ LEG 5 ============ -->
+  <div class="leg"><span class="n">05</span><h2>洛磯山脈 · 班夫 &amp; 賈斯伯</h2><span class="loc">Banff · Jasper · Yoho</span></div>
+
+  <p class="hint">這段是全程重頭戲：班夫鎮 → 冰原大道進 Jasper（住 2 晚）→ 折返玩路易斯湖/夢蓮湖 → 纜車＋Canmore 回卡加利。多為自煮、可洗衣的 Airbnb。<b>行程細節整理自共享行程文件。</b></p>
+
+  <section class="day" id="d0930">
+    <div class="day-head">
+      <div class="datebox"><div class="d">30</div><div class="m">Sep</div></div>
+      <div class="day-meta"><div class="wd">週三 · Day 11</div><div class="ttl">班夫小鎮日</div></div>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Banff Town Sign</div>
+        <div class="stop-sub">班夫小鎮地標，拍照打卡</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-bag"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Banff Ave 班夫大道</div>
+        <div class="stop-sub">COWS Banff 有名的冰淇淋、Rocky Mountain Soap Co（純天然精油冷製皂）</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-water"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Bow Falls · Surprise Corner Viewpoint</div>
+        <div class="stop-sub">弓河瀑布與經典城堡飯店觀景角</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-leaf"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Cascade of Time Garden</div>
+        <div class="stop-sub">花園（韓劇取景地）</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-flag"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Tunnel Mountain Trail 健行</div>
+        <div class="stop-sub">下午健行；傍晚可再泡 Upper Hot Springs</div></div></li>
+    </ul>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>Harvie Heights</b>（班夫旁）</div>
+  </section>
+
+  <section class="day" id="d1001">
+    <div class="day-head">
+      <div class="datebox"><div class="d">1</div><div class="m">Oct</div></div>
+      <div class="day-meta"><div class="wd">週四 · Day 12</div><div class="ttl">冰原大道 · 進 Jasper</div></div>
+      <span class="daytag">公路日</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-move"><svg class="ic"><use href="#ic-car"/></svg></span>
+        <div class="stop-body"><div class="stop-name">出發前先加油、備午餐三明治</div>
+        <div class="stop-sub">Icefields Parkway 開往 Jasper 方向</div>
+        <span class="stop-note">沿途加油站少、多處無訊號請先下載離線地圖；隨身帶防熊噴霧；小心野生動物請減速</span>
+        <span class="stop-note">08:00 前先用 GCkey 登入搶 10/3 路易斯湖接駁票（8am 刷新）</span></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-eye"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Hector Lake · Bow Lake 弓湖</div>
+        <div class="stop-sub">冰原大道沿途觀景湖</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Peyto Lake 佩托湖</div>
+        <div class="stop-sub">狼頭形冰川湖，冰原大道亮點之一</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Columbia Icefield 哥倫比亞冰原</div>
+        <div class="stop-sub">冰原探險＋Skywalk 天空步道</div>
+        <span class="stop-note">需訂 15:00 場次、14:30 前務必抵達</span>
+        <a class="link" href="https://www.getyourguide.com/zh-tw/jasper-l290/columbia-icefield-glacier-adventure-ice-explorer-skywalk-t284552/" target="_blank" rel="noopener">訂票 <svg class="ic"><use href="#ic-arrow"/></svg></a></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-water"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Athabasca Falls</div>
+        <div class="stop-sub">水量豐沛的峽谷瀑布</div></div></li>
+      <li><span class="badge b-food"><svg class="ic"><use href="#ic-fork"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Jasper Town 晚餐</div>
+        <div class="stop-sub">當地推薦 Kimchi Kimchi House（需提前訂位）；順便買隔天早餐</div></div></li>
+    </ul>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>Jasper Downtown Hostel</b>（Jasper 鎮上）</div>
+  </section>
+
+  <section class="day" id="d1002">
+    <div class="day-head">
+      <div class="datebox"><div class="d">2</div><div class="m">Oct</div></div>
+      <div class="day-meta"><div class="wd">週五 · Day 13</div><div class="ttl">Jasper 湖區</div></div>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-flag"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Valley of the Five Lakes 五湖谷</div>
+        <div class="stop-sub">健行步道約 2 小時（備三明治當午餐）</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Pyramid Island + Pyramid Lake 金字塔湖</div>
+        <div class="stop-sub">湖光倒影超美</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-eye"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Medicine Lake Lookout</div>
+        <div class="stop-sub">短暫停留拍照</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Maligne Lake 瑪琳湖</div>
+        <div class="stop-sub">Jasper 招牌大湖；回程回鎮上買隔天早餐、吃晚餐</div></div></li>
+    </ul>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>Sunwapta Falls Rocky Mountain Lodge</b>（Jasper 南）</div>
+  </section>
+
+  <section class="day" id="d1003">
+    <div class="day-head">
+      <div class="datebox"><div class="d">3</div><div class="m">Oct</div></div>
+      <div class="day-meta"><div class="wd">週六 · Day 14</div><div class="ttl">路易斯湖 · 夢蓮湖 · 翡翠湖</div></div>
+      <span class="daytag">湖區精華</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-move"><svg class="ic"><use href="#ic-car"/></svg></span>
+        <div class="stop-body"><div class="stop-name">清晨出發（約 06:30）南下</div>
+        <div class="stop-sub">從 Sunwapta 沿冰原大道回路易斯湖一帶</div>
+        <span class="stop-note">Moraine/Louise 私車禁入，須搭接駁（Lake Louise Ski Resort 的 Park &amp; Ride）；接駁票分時段、務必準時報到</span>
+        <span class="stop-note">依搶到的票時段有三種時間版本，重點是卡好報到時間</span></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Crowfoot Glacier 烏鴉腳冰河</div>
+        <div class="stop-sub">路邊觀景台，拍照 15 分</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-eye"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Morant's Curve</div>
+        <div class="stop-sub">經典山谷鐵道彎，碰運氣等火車（早晚各試一次）</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Moraine Lake 夢蓮湖</div>
+        <div class="stop-sub">爬 Rockpiles 看著名十峰谷風景</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Lake Louise 路易斯湖 + Fairview Lookout</div>
+        <div class="stop-sub">湖畔散步＋步道</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Emerald Lake 翡翠湖</div>
+        <div class="stop-sub">跨省到 Yoho 國家公園（傍晚光線仍美）</div></div></li>
+    </ul>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>Harvie Heights</b>（班夫旁）</div>
+  </section>
+
+  <section class="day" id="d1004">
+    <div class="day-head">
+      <div class="datebox"><div class="d">4</div><div class="m">Oct</div></div>
+      <div class="day-meta"><div class="wd">週日 · Day 15</div><div class="ttl">硫磺山纜車 · Canmore · 回卡加利</div></div>
+      <span class="daytag">移動日</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Banff Sulphur Mt Gondola 硫磺山纜車</div>
+        <div class="stop-sub">加拿大最高星巴克（秋季限定南瓜香料拿鐵）、Sulphur Mountain Boardwalk 步道</div>
+        <span class="stop-note">訂 9:10 場次，建議提早 15–30 分抵達</span></div></li>
+      <li><span class="badge b-food"><svg class="ic"><use href="#ic-fork"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Canmore 小鎮</div>
+        <div class="stop-sub">午餐 Rocky Mountain Bagel Co、文創小店 Stonewaters、拍照地標 Big Head Sculpture</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Heritage Park Calgary</div>
+        <div class="stop-sub">加拿大最大的活歷史博物館（韓劇取景地）· 10:00–17:00</div>
+        <a class="link" href="http://www.heritagepark.ca/" target="_blank" rel="noopener">官網 <svg class="ic"><use href="#ic-arrow"/></svg></a></div></li>
+    </ul>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>卡加利 Calgary</b></div>
+  </section>
+
+  <!-- ============ LEG 6 ============ -->
+  <div class="leg"><span class="n">06</span><h2>卡加利 · 恐龍谷</h2><span class="loc">Calgary · Drumheller</span></div>
+
+  <section class="day" id="d1005">
+    <div class="day-head">
+      <div class="datebox"><div class="d">5</div><div class="m">Oct</div></div>
+      <div class="day-meta"><div class="wd">週一 · Day 16</div><div class="ttl">Drumheller 恐龍谷一日遊</div></div>
+      <span class="daytag">城市日</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-flag"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Horseshoe Canyon 馬蹄峽谷</div>
+        <div class="stop-sub">出發第一站 · 惡地地形健行</div>
+        <a class="link" href="https://adventurealberta.ca/horseshoe-canyon-hike/" target="_blank" rel="noopener">健行資訊 <svg class="ic"><use href="#ic-arrow"/></svg></a></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Horsethief Canyon 偷馬賊惡地峽谷</div>
+        <div class="stop-sub">德拉姆赫勒鎮上的壯闊惡地</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">The Little Church</div>
+        <div class="stop-sub">全世界最小的教堂，快速拍照</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-eye"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Royal Tyrrell Museum 皇家蒂勒爾博物館</div>
+        <div class="stop-sub">世界級古生物/恐龍博物館，午餐後前往</div>
+        <span class="stop-note">10:00–17:00 · 最後入場 15:30</span></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">World's Largest Dinosaur 世界最大恐龍</div>
+        <div class="stop-sub">可爬進恐龍嘴巴俯瞰小鎮</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-mtn"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Hoodoos Trail 怪岩柱步道</div>
+        <div class="stop-sub">招牌 Hoodoos 蕈狀岩地形</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-eye"/></svg></span>
+        <div class="stop-body"><div class="stop-name">Crescent Heights Lookout（回卡加利）</div>
+        <div class="stop-sub">看夕陽（韓劇取景地），回程晚餐</div>
+        <span class="stop-note">隔天 10/6 早上飛黃刀，記得先整理行李</span></div></li>
+    </ul>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>卡加利 Calgary</b>（自行安排 · 待補）</div>
+  </section>
+
+  <!-- ============ LEG 6 ============ -->
+  <div class="leg"><span class="n">07</span><h2>極光 · 黃刀鎮</h2><span class="loc">Yellowknife</span></div>
+
+  <section class="day" id="d1006">
+    <div class="day-head">
+      <div class="datebox"><div class="d">6</div><div class="m">Oct</div></div>
+      <div class="day-meta"><div class="wd">週二 · Day 17</div><div class="ttl">飛往黃刀鎮</div></div>
+      <span class="daytag">飛行日</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-move"><svg class="ic"><use href="#ic-plane"/></svg></span>
+        <div class="stop-body"><span class="stop-time">11:10</span><span class="stop-name">飛黃刀鎮 Yellowknife</span>
+        <div class="stop-sub">前往西北領地追極光</div>
+        <span class="stop-note">此段與團體分開、自行前往；黃刀住宿為自行安排（非團體 Airbnb）</span></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-eye"/></svg></span>
+        <div class="stop-body"><div class="stop-name">夜間極光團</div>
+        <div class="stop-sub">秋季極光季已開始，晚上安排極光觀賞</div>
+        <span class="stop-note">帶足保暖衣物，夜間氣溫低</span></div></li>
+    </ul>
+    <div class="recs">
+      <div class="h5"><svg class="ic"><use href="#ic-eye"/></svg> 極光團參考資源</div>
+      <ul>
+        <li><span class="k n">提醒</span><span class="ds">極光季約每年 8 月～隔年 3 月底/4 月初；秋天團較少、內容偏空，要挑好日期，出發前多比幾家（台灣社群有人推薦，但團的時間不同）。</span></li>
+        <li><span class="nm">Tours4Fun 黃刀團</span> <a class="maplink" href="https://www.toursforfun.com/na-ca-yellowknife/dd-20260921_20260926" target="_blank" rel="noopener">看團</a></li>
+        <li><span class="nm">Charming Holidays 極光</span> <a class="maplink" href="https://charmingholidays.ca/aurora" target="_blank" rel="noopener">看團</a></li>
+        <li><span class="nm">Klook 追極光團</span> <a class="maplink" href="https://www.klook.com/zh-TW/activity/164307-aurora-northern-lights-chase-tour-in-yellowknife/" target="_blank" rel="noopener">看團</a></li>
+        <li><span class="nm">Leyo Travel 黃刀</span> <a class="maplink" href="https://booking.leyo.travel/C/nav/ch/yellowknifetour" target="_blank" rel="noopener">看團</a></li>
+      </ul>
+    </div>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>黃刀鎮 Yellowknife</b>（自行安排）</div>
+  </section>
+
+  <section class="day" id="d1007">
+    <div class="day-head">
+      <div class="datebox"><div class="d">7</div><div class="m">Oct</div></div>
+      <div class="day-meta"><div class="wd">週三 · Day 18</div><div class="ttl">黃刀鎮全日</div></div>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <div class="stop-body"><div class="stop-name">白天市區 / 湖區</div>
+        <div class="stop-sub">Old Town、Great Slave Lake，白天休息養精神</div></div></li>
+      <li><span class="badge b-sight"><svg class="ic"><use href="#ic-eye"/></svg></span>
+        <div class="stop-body"><div class="stop-name">再戰極光</div>
+        <div class="stop-sub">第二晚極光機會，提高看到的機率</div></div></li>
+    </ul>
+    <div class="stay"><svg class="ic"><use href="#ic-bed"/></svg> 住 <b>黃刀鎮 Yellowknife</b>（自行安排）</div>
+  </section>
+
+  <section class="day" id="d1008">
+    <div class="day-head">
+      <div class="datebox"><div class="d">8</div><div class="m">Oct</div></div>
+      <div class="day-meta"><div class="wd">週四 · Day 19</div><div class="ttl">飛回溫哥華</div></div>
+      <span class="daytag">返程</span>
+    </div>
+    <ul class="stops">
+      <li><span class="badge b-move"><svg class="ic"><use href="#ic-plane"/></svg></span>
+        <div class="stop-body"><span class="stop-time">19:15</span><span class="stop-name">飛回溫哥華</span>
+        <div class="stop-sub">白天可再逛黃刀鎮，傍晚班機返回，行程結束</div></div></li>
+    </ul>
+  </section>
+
+  <!-- ============ GIFTS ============ -->
+  <div class="leg" id="gifts" style="scroll-margin-top:64px"><span class="n">🎁</span><h2>溫哥華伴手禮</h2><span class="loc">Granville Island 可一次買齊</span></div>
+
+  <p class="hint">溫哥華 3 天有逛 Granville Island（9/22），這裡可找到多數在地伴手禮。<b>怕冷藏就選真空包裝常溫款；回台前再確認台灣入境食品規定。</b></p>
+
+  <div class="gifts">
+    <div class="gift top">
+      <div class="gift-h">
+        <span class="badge b-food"><svg class="ic"><use href="#ic-water"/></svg></span>
+        <span class="nm">BC 煙燻鮭魚 / 蜜汁鮭魚<span class="en">BC Smoked Salmon / Candied Salmon</span></span>
+        <span class="rank">NO.1</span>
+      </div>
+      <p>最推的溫哥華代表伴手禮，很有在地特色。Granville Island 找得到加拿大製的 smoked salmon、maple candied salmon。</p>
+      <span class="stop-note">選真空包裝、常溫保存款最好帶</span>
+    </div>
+
+    <div class="gift">
+      <div class="gift-h">
+        <span class="badge b-food"><svg class="ic"><use href="#ic-leaf"/></svg></span>
+        <span class="nm">楓糖漿<span class="en">Maple Syrup</span></span>
+      </div>
+      <p>認明標示 <b>100% Pure Maple Syrup</b>，別只看楓葉造型瓶。送多人可改買 maple cookies、maple candy。</p>
+    </div>
+
+    <div class="gift">
+      <div class="gift-h">
+        <span class="badge b-food"><svg class="ic"><use href="#ic-fork"/></svg></span>
+        <span class="nm">Nanaimo Bar<span class="en">BC 代表甜點</span></span>
+      </div>
+      <p>源自 Vancouver Island 的三層甜點（巧克力＋椰子＋custard）。比較適合現場吃，不好帶回台灣。</p>
+    </div>
+
+    <div class="gift">
+      <div class="gift-h">
+        <span class="badge b-food"><svg class="ic"><use href="#ic-gift"/></svg></span>
+        <span class="nm">BC 藍莓 / 莓果製品<span class="en">Blueberry / Berry</span></span>
+      </div>
+      <p>果醬、果乾、莓果巧克力都可以，比一般 Canada 紀念品更有地方特色。</p>
+    </div>
+
+    <div class="gift">
+      <div class="gift-h">
+        <span class="badge b-sight"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <span class="nm">原住民品牌<span class="en">Indigenous-made</span></span>
+      </div>
+      <p>送比較特別的人很推。例如 Authentic Indigenous Seafood 的 Maple Smoked Wild Chinook Salmon、Candied Salmon，比機場一般紀念品有特色。</p>
+    </div>
+
+    <div class="gift">
+      <div class="gift-h">
+        <span class="badge b-sight"><svg class="ic"><use href="#ic-gift"/></svg></span>
+        <span class="nm">加拿大保養 / 香氛<span class="en">Saje · Sḵwálwen Botanicals</span></span>
+      </div>
+      <p>Vancouver / BC 在地品牌，很適合送女生。當地 gift shop 常集中賣加拿大製 body care、蠟燭、肥皂。</p>
+    </div>
+  </div>
+
+  <div class="who">
+    <div class="who-row"><span class="who-tag">送同事</span><span class="d"><b>Maple cookies</b> / chocolate</span></div>
+    <div class="who-row"><span class="who-tag">送家人</span><span class="d"><b>100% Maple Syrup</b> / Smoked Salmon</span></div>
+    <div class="who-row"><span class="who-tag">送好友</span><span class="d"><b>Saje</b> / Indigenous-made products</span></div>
+  </div>
+
+  <h3 style="font-family:'Fraunces','Noto Sans TC',serif;font-weight:600;font-size:1.1rem;margin:34px 0 4px;color:var(--ink)">什麼時候買？</h3>
+  <p class="hint" style="border-left-color:var(--lake)">你 9/23 就離開溫哥華、10/8 晚上才飛回來。<b>耐放的先在溫哥華買齊，怕熱怕壓的留到回程機場。</b></p>
+  <div class="plan">
+    <div class="plan-card main">
+      <span class="tag">主力 · 22 Sep</span>
+      <h4>Granville Island</h4>
+      <p>唯一在市集的一天（已排）。買<b>耐放、真空/常溫</b>款：100% 楓糖漿、maple cookies、常溫保存的煙燻/蜜汁鮭魚（認明真空 retort 或罐裝才耐放，冷藏生鮮款不適合放車上兩週半）、莓果製品。</p>
+    </div>
+    <div class="plan-card late">
+      <span class="tag">補貨 · 8 Oct 回程</span>
+      <h4>YVR 溫哥華機場</h4>
+      <p>回台前最後補一批。機場在地店鮭魚、楓糖選擇好，適合買<b>巧克力、Nanaimo Bar 這種怕壓怕熱、或想新鮮一點</b>的，不用車上放兩週半。</p>
+    </div>
+  </div>
+  <p class="hint">楓糖漿、cookies 在<b>卡加利、班夫</b>也買得到，不必在溫哥華一次扛完。<b>卡加利、班夫屬 Alberta 省，消費稅只 5%</b>（BC 省約 12%），紀念品、衣服、精品留到那邊買更划算。</p>
+
+  <h3 style="font-family:'Fraunces','Noto Sans TC',serif;font-weight:600;font-size:1.1rem;margin:30px 0 4px;color:var(--ink)">溫哥華好逛的點</h3>
+  <div class="spots-wrap">
+  <table class="spots">
+    <thead><tr><th>何時</th><th>地點</th><th>買什麼</th></tr></thead>
+    <tbody>
+      <tr><td>21 Sep</td><td><b>煤氣鎮 Gastown</b><br><span style="color:var(--faint);font-weight:400">已排</span></td><td>原住民藝品店、<b>Saje</b> 香氛、精品 gift shop</td></tr>
+      <tr><td>22 Sep</td><td><b>Granville Island</b><br><span style="color:var(--faint);font-weight:400">已排</span></td><td>公共市集：鮭魚、楓糖、莓果、手作</td></tr>
+      <tr><td>機動</td><td><b>Metrotown</b></td><td>Vessi 防水鞋（創辦人台灣人，真防水）</td></tr>
+      <tr><td>8 Oct</td><td><b>YVR 機場</b><br><span style="color:var(--faint);font-weight:400">回程</span></td><td>最後補貨、生鮮鮭魚、巧克力；outlet 的 The North Face 較便宜、Levi's（Roots 與台灣價差不大）</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <footer>
+    加西極光公路旅行 · 20 Sep – 8 Oct, 2026 · 初版<br>
+    點上方日期可快速跳到當天 · 之後可再補住宿與細節
+  </footer>
+
+</div>
