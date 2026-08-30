@@ -226,6 +226,26 @@
     border-left:3px solid var(--amber);
   }
 
+  /* ---------- Booking checklist ---------- */
+  .checklist{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px 18px; margin-top:20px; scroll-margin-top:64px}
+  .checklist .ct{font-family:"Fraunces","Noto Sans TC",serif; font-weight:600; font-size:1.2rem; margin:0; color:var(--ink)}
+  .checklist .sub{font-size:.8rem; color:var(--faint); margin:4px 0 0}
+  .ck-group{margin-top:16px}
+  .ck-group .gh{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; font-weight:700; margin:0 0 4px}
+  .ck-group.done .gh{color:var(--muted)}
+  .ck-group.urgent .gh{color:#c0392b}
+  .ck-group.soon .gh{color:var(--amber)}
+  .ck-group.food .gh{color:var(--pine)}
+  .ck-item{display:flex; gap:10px; align-items:flex-start; padding:8px 0; border-top:1px dashed var(--line)}
+  .ck-group .ck-item:first-of-type{border-top:none}
+  .ck-item input{margin:2px 0 0; width:18px; height:18px; accent-color:var(--pine); flex:0 0 auto; cursor:pointer}
+  .ck-item .t{font-size:.9rem; color:var(--ink); line-height:1.45}
+  .ck-item .t b{font-weight:700}
+  .ck-item .t .d{display:block; color:var(--muted); font-size:.8rem; font-weight:400}
+  .ck-item input:checked ~ .t{color:var(--faint); text-decoration:line-through}
+  .ck-item input:checked ~ .t .d{color:var(--faint)}
+
   /* ---------- Gifts ---------- */
   .gifts{display:grid; grid-template-columns:1fr; gap:12px; margin-top:14px}
   @media(min-width:560px){.gifts{grid-template-columns:1fr 1fr}}
@@ -346,6 +366,7 @@
       <a class="chip" href="#d1006">6 Oct<span class="cn">黃刀鎮</span></a>
       <a class="chip" href="#d1007">7 Oct<span class="cn">黃刀鎮</span></a>
       <a class="chip" href="#d1008">8 Oct<span class="cn">回溫哥華</span></a>
+      <a class="chip" href="#checklist" style="color:var(--lake);border-color:color-mix(in srgb,var(--lake) 55%,transparent)">🎫 預約清單</a>
       <a class="chip" href="#gifts" style="color:var(--amber);border-color:color-mix(in srgb,var(--amber) 55%,transparent)">🎁 伴手禮</a>
     </div>
   </nav>
@@ -356,6 +377,68 @@
     <span><svg class="ic"><use href="#ic-car"/></svg> 交通 / 移動</span>
     <span><svg class="ic"><use href="#ic-bed"/></svg> 住宿</span>
   </div>
+
+  <section class="checklist" id="checklist">
+    <h3 class="ct">🎫 行前預約清單</h3>
+    <p class="sub">勾選會自動記在這台裝置（重新整理不會消失）。最急的是 🔴 那組。</p>
+
+    <div class="ck-group done">
+      <div class="gh">✅ 已完成</div>
+      <label class="ck-item"><input type="checkbox" data-k="done-aurora" checked><span class="t">黃刀極光團 ＋ 2 晚住宿（Aurora Dream Tours，已付清）</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="done-flights" checked><span class="t">全部機票（台北⇄溫哥華、卡加利→黃刀、黃刀→溫哥華）已出票</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="done-stay" checked><span class="t">9/20–10/5 住宿（北溫、Whistler、甘露、Kelowna、卡加利、Radisson 機場）已訂</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="done-dropoff" checked><span class="t">10/8 送機時間已與極光團改約 ~15:50（配合改早的班機）</span></label>
+    </div>
+
+    <div class="ck-group urgent">
+      <div class="gh">🔴 必訂（會賣完 / 卡時間）</div>
+      <label class="ck-item"><input type="checkbox" data-k="u-icefield"><span class="t"><b>Columbia Icefield 冰原探險</b><span class="d">10/1 · 訂 15:00 場（14:30 前到）；季節到 10/12</span></span></label>
+      <label class="ck-item"><input type="checkbox" data-k="u-shuttle"><span class="t"><b>夢蓮湖／路易斯湖接駁票</b><span class="d">10/3 的票 → 10/1 早上 08:00 MDT 開搶，先登入 GCkey</span></span></label>
+      <label class="ck-item"><input type="checkbox" data-k="u-horse"><span class="t"><b>Fish Creek 騎馬</b><span class="d">9/29 · GetYourGuide，秋季場次少，先確認有無開團</span></span></label>
+    </div>
+
+    <div class="ck-group soon">
+      <div class="gh">🟡 建議先線上訂（省錢／免排隊）</div>
+      <label class="ck-item"><input type="checkbox" data-k="s-capilano"><span class="t">Capilano 吊橋（9/22）</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="s-seatosky"><span class="t">Sea to Sky 纜車 ＋ Eagle Coaster（9/23）</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="s-banffgondola"><span class="t">Banff 硫磺山纜車 9:10 場（10/4）</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="s-tower"><span class="t">Calgary Tower（10/5）</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="s-oculus"><span class="t">Mission Hill「Oculus」品酒體驗（9/26，想喝旗艦酒才需要）</span></label>
+    </div>
+
+    <div class="ck-group food">
+      <div class="gh">🍽️ 餐廳訂位（熱門）</div>
+      <label class="ck-item"><input type="checkbox" data-k="f-sandbar"><span class="t">The Sandbar（9/22 Granville Island）</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="f-araxi"><span class="t">Araxi（9/23 Whistler）</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="f-jasper"><span class="t">Kimchi Kimchi House（10/1）／The Raven Bistro（10/2）</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="f-calgary"><span class="t">River Café ／ Sukiyaki House（10/5 卡加利）</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="f-bullocks"><span class="t">Bullock's Bistro（黃刀，10/6–07）</span></label>
+    </div>
+
+    <div class="ck-group">
+      <div class="gh">📋 出發前再確認</div>
+      <label class="ck-item"><input type="checkbox" data-k="c-kangaroo"><span class="t">袋鼠農場（9/25）季末是否仍營業</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="c-hatcreek"><span class="t">Hat Creek Ranch（9/24，開到 9 月底，若要去）</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="c-parkspass"><span class="t">Parks Canada 通行證（班夫／Jasper，9/29 現場買也可）</span></label>
+      <label class="ck-item"><input type="checkbox" data-k="c-joffre"><span class="t">Joffre Lakes 確認仍為 9/8–9/30 關園（已改替代路線）</span></label>
+    </div>
+  </section>
+  <script>
+  (function(){
+    try{
+      var K='trip-checklist-v1';
+      var store={};
+      try{ store=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){ store={}; }
+      document.querySelectorAll('#checklist input[type=checkbox]').forEach(function(b){
+        var k=b.getAttribute('data-k');
+        if(store && Object.prototype.hasOwnProperty.call(store,k)){ b.checked=!!store[k]; }
+        b.addEventListener('change',function(){
+          try{ store[k]=b.checked; localStorage.setItem(K,JSON.stringify(store)); }catch(e){}
+        });
+      });
+    }catch(e){}
+  })();
+  </script>
 
   <!-- ============ LEG 1 ============ -->
   <div class="leg"><span class="n">01</span><h2>溫哥華市區</h2><span class="loc">Vancouver</span></div>
